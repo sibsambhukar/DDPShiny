@@ -1,0 +1,23 @@
+Shiny Application Supporting Documentation: Developing Data Products, Coursera
+This application analyzes the fitting of regression models on variation of miles per gallon (mpg) as a function of number of cylinders and transmission type. It predicts the mileage (mpg) for a given number of cylinders. 
+Model: mpg Vs cyl
+mpg_variation<-lm(mtcars$mpg~mtcars$cyl,data=mtcars)
+summary(mpg_variation)$coef
+##             Estimate Std. Error   t value     Pr(>|t|)
+## (Intercept) 37.88458  2.0738436 18.267808 8.369155e-18
+## mtcars$cyl  -2.87579  0.3224089 -8.919699 6.112687e-10
+A basic regression model Y=b0+b*X is fitted to find the model and predict the output for given cylinder type. 
+Auto Vs manual Transmission
+mpgTr<-lm(mtcars$mpg~am,data=mtcars)
+summary(mpgTr)$coef
+##              Estimate Std. Error   t value     Pr(>|t|)
+## (Intercept) 17.147368   1.124603 15.247492 1.133983e-15
+## am           7.244939   1.764422  4.106127 2.850207e-04
+trAuto<-subset(mtcars,am==0)
+trMan<-subset(mtcars,am==1)
+mpg_diff<-mean(trAuto$mpg)-mean(trMan$mpg)
+Predict for a given number of cylinders
+model_fit<-lm(mtcars$mpg~mtcars$cyl,data=mtcars)
+mean_predict<-mean(predict(model_fit,newdata=cylr))
+
+
