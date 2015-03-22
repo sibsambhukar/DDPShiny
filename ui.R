@@ -13,7 +13,7 @@ shinyUI(pageWithSidebar(
     plotOutput('boxPlot'),
     h3('Result of prediction'),
     h4('You entered cyl ='),
-    verbatimTextOutput("InputValue"),
+    verbatimTextOutput("inputValue"),
     h4('Which resulted in a prediction (mpg) of '),
     verbatimTextOutput("prediction")
   )
