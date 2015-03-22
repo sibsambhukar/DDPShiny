@@ -1,5 +1,9 @@
 Shiny Application Supporting Documentation: Developing Data Products, Coursera
-This application analyzes the fitting of regression models on variation of miles per gallon (mpg) as a function of number of cylinders and transmission type. It predicts the mileage (mpg) for a given number of cylinders. 
+
+Summary: This application analyzes the fitting of regression models on variation of miles per gallon (mpg) as a function of number of cylinders and transmission type. It predicts the mileage (mpg) for a given number of cylinders. 
+
+How to use: Enter number of cyllinders and click submit button to get the predicted mileage in mpg
+
 Model: mpg Vs cyl
 mpg_variation<-lm(mtcars$mpg~mtcars$cyl,data=mtcars)
 summary(mpg_variation)$coef
