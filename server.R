@@ -3,7 +3,8 @@ data(mtcars)
 
 predict_mgp<-function(cylr){
   model_fit<-lm(mtcars$mpg~mtcars$cyl,data=mtcars)
-  mean_predict<-mean(predict(model_fit,newdata=cylr))
+  prediction<-coef(model_fit)[1]+coef(model_fit)[2]*cylr
+  #mean_predict<-predict(model_fit,newdata=cylr)
 }
 
 shinyServer(
